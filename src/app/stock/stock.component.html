@@ -1,0 +1,78 @@
+<p></p>
+<head>
+    <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script> 
+</head>
+<body>
+    <h1>Add Stock</h1>=
+
+   <form #stockForm="ngForm" (ngSubmit)="addStock(stockObj.company_id_fk)">
+
+       <!--> <input name = "transactionId" class = "form-control" type="number" placeholder="Enter transactionId" [(ngModel)]="stockObj.transactionId" size="40" required><br>-->
+
+        <input name = "stockPrice" class = "form-control" type="number" placeholder="Enter stockPrice" [(ngModel)]="stockObj.stockPrice" size="40" required><br>
+
+        <input name = "issueAt" class = "form-control" type="text" placeholder="Enter DateTime" [(ngModel)]="stockObj.issueAt" size="40" required><br>
+
+        <input name = "company_id_fk" class = "form-control" type="number" placeholder="Enter company id" [(ngModel)]="stockObj.company_id_fk" size="40" required><br>
+
+        
+        <button type = "submit"class ="btn btn-info">Add Stock Details </button>
+    </form>
+   <!--<div class=" Stock">
+        <mat-expansion-panel>
+            <mat-expansion-panel-header>
+                <mat-panel-title>
+                    Add Stock
+                </mat-panel-title>
+            </mat-expansion-panel-header>
+
+            <div class = "Transaction Id">
+                <mat-form-field>
+                    <input matInput placeholder ="Enter transactionId" name="transactionId" [(ngModel)]="stockObj.transactionId" required>
+                </mat-form-field>
+            </div>
+
+            <div class = "Stock Price">
+                <mat-form-field>
+                    <input matInput placeholder ="Enter stockPrice" name="stockPrice" [(ngModel)]="stockObj.stockPrice" required>
+                </mat-form-field>
+            </div>
+
+            <div class = "IssueAt">
+                <mat-form-field>
+                    <input matInput placeholder ="Enter DateTime" name="issueAt" [(ngModel)]="stockObj.issueAt" required>
+                </mat-form-field>
+            </div>
+            <div class = "company_id_fk">
+                <mat-form-field>
+                    <input matInput placeholder ="Enter company_id_fk" name="company_id_fk" [(ngModel)]="stockObj.company_id_fk" required>
+                </mat-form-field>
+            </div>
+            <button type = "submit"class ="btn btn-info">Add Stock Details </button>
+            <mat-action-row>
+                <div class = "container-fluid padding">
+                    <div class ="row">
+                        <div class ="col-md-2" style = "margin-left:60px">
+                        <button mat-raised-button class ="btn btn-primary" (click)="addStock(stockObj.companyCode)">
+                            Add Stock
+                        </button>
+                    </div>
+                    </div>
+                </div>
+            </mat-action-row>
+            
+        </mat-expansion-panel>
+    </div>-->
+ 
+    <hr>
+
+    <div *ngFor="let s of stockList">
+        {{s.transactionId}}-->{{s.stockPrice}}-->{{s.issueAt}}-->{{s.company_id_fk}}--!
+    </div>

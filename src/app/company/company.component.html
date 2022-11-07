@@ -1,0 +1,60 @@
+<mat-toolbar color="primary">
+  <span>eStockApp</span>
+  <span class="example-spacer"></span>
+</mat-toolbar>
+
+<div class="company-container">
+  <div style="margin-top: 20px; float: right; margin-bottom: 20px">
+    <save-company-dialogue [saveCompanyDetails]="addCompanyDetails.bind(this)"></save-company-dialogue>
+  </div>
+  <br />
+  <div id="searchBox">
+    <input type="number" [(ngModel)]="companym.companyCode" />
+    <button type="button" class="btn btn-info" (click)="getCompanyByCode()">
+      Search
+    </button>
+    <div>
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th>Company Code</th>
+            <th>Company Name</th>
+            <th>Company CEO</th>
+            <th>Company Turnover</th>
+            <th>Website</th>
+            <th>Stock Exchange</th>
+            <th>Stock Price</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+
+        <tbody class="tbody">
+          <tr *ngFor="let b of companyarr">
+            <td>{{ b.companyCode }}</td>
+            <td>{{ b.companyName }}</td>
+            <td>{{ b.companyCEO }}</td>
+            <td>{{ b.companyTurnover }}</td>
+            <td>{{ b.companyWebsite }}</td>
+            <td>{{ b.stockExchange }}</td>
+            <td>{{ b.stockPrice }}</td>
+            <td>
+              <save-company-dialogue [saveCompanyDetails]="updateCompany.bind(this)" [companyObj]="b">
+              </save-company-dialogue>
+              <button mat-raised-button color="primary" (click)="deleteCompany(b.companyCode)"
+                style="margin-left: 20px">
+                Delete
+              </button>
+              <button mat-raised-button color="primary" routerLink="/stock"
+              style="margin-left: 20px">
+              AddStock
+            </button>
+             
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    {{ data }}
+   
+  </div>
+</div>

@@ -1,0 +1,93 @@
+<h2 mat-dialog-title>Save Company</h2>
+<form #companyForm="ngForm" (ngSubmit)="saveCompanyDetails(companyObj)">
+  <mat-dialog-content class="mat-typography" style="min-width: 60vw">
+    <div class="m-5">
+      <div class="form-group">
+        <label for="companyCode">Enter Company Code :</label>
+        <input
+          #companyId
+          type="number"
+          [(ngModel)]="companyObj.companyCode"
+          name="companyCode"
+          id="companyCode"
+          class="form-control"
+          placeholder="Enter Company Code"
+        />
+      </div>
+      <div class="form-group">
+        <label for="companyName">Enter Company Name:</label>
+        <input
+          #companyName
+          [(ngModel)]="companyObj.companyName"
+          name="companyName"
+          id="companyName"
+          class="form-control"
+          placeholder="Enter Company Name"
+        />
+      </div>
+      <div class="form-group">
+        <label for="companyCEO">Enter Company CEO:</label>
+        <input
+          #companyCEO
+          [(ngModel)]="companyObj.companyCEO"
+          name="companyCEO"
+          id="companyCEO"
+          class="form-control"
+          placeholder="Enter Company CEO"
+        />
+      </div>
+      <div class="form-group">
+        <label for="companyTurnover">Enter companyTurnover:</label>
+        <input
+          #companyTurnover
+          type="number"
+          [(ngModel)]="companyObj.companyTurnover"
+          name="companyTurnover"
+          id="companyTurnover"
+          class="form-control"
+          placeholder="Enter companyTurnover"
+        />
+      </div>
+      <div class="form-group">
+        <label for="companyUrl">Enter companyWebsite:</label>
+        <input
+          #companyWebsite
+          [(ngModel)]="companyObj.companyWebsite"
+          name="companyWebsite"
+          id="companyWebsite"
+          class="form-control"
+          placeholder="Enter Company URL"
+        />
+      </div>
+      <div class="form-group">
+        <label for="stockExchange">Enter stockExchange:</label>
+        <input
+          #stockExchange
+          [(ngModel)]="companyObj.stockExchange"
+          name="stockExchange"
+          id="stockExchange"
+          class="form-control"
+          placeholder="Enter stockExchange"
+        />
+      </div>
+      <div class="form-group">
+        <label for="stockExchange">Enter StockPrice:</label>
+        <input
+          #StockPrice
+          [(ngModel)]="companyObj.stockPrice"
+          type="number"
+          name="StockPrice"
+          id="StockPrice"
+          class="form-control"
+          placeholder="Enter StockPrice"
+        />
+      </div>
+    </div>
+  </mat-dialog-content>
+  <mat-dialog-actions align="end">
+    <button mat-button mat-dialog-close>Cancel</button>
+    <button type="submit" mat-button [mat-dialog-close]="true" cdkFocusInitial>
+      Save
+    </button>
+  </mat-dialog-actions>
+</form>
